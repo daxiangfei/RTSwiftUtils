@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public class GCDHelper {
     
     //在global队列里进行倒计时

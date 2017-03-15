@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public enum DateFormatter:String {
     case YearMonthDayHourMinuteSec = "yyyy-MM-dd HH:mm:ss"
     case YearMonthDayHourMinuteSec_CompactLink = "yyyyMMddHHmmss"
