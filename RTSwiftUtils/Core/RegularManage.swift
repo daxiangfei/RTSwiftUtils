@@ -9,7 +9,6 @@
 
 import Foundation
 
-
 public class RegularManage {
     
     ///是否是数字 或者 数字包含小数点后两位
