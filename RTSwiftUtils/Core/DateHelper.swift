@@ -23,6 +23,7 @@ public class DateHepler {
         let timeInterval:TimeInterval = now.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return "\(timeStamp)"
+        
     }
     
     //按照给定时间转换成星期几
