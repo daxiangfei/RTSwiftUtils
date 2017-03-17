@@ -25,6 +25,7 @@ public enum LineLocation:String {
     case Bottom
     case Right
     case TwoForUpAndDown
+    case TwoForUpAndRight
     case TwoForLeftAndRight
     case ThreeTowardsLeft
     case ThreeTowardsRight
@@ -98,6 +99,10 @@ extension ProtocolBorderLineView where Self: UIView {
         case .ThreeTowardsDown:
             path.move(to: CGPoint(x: 0, y: viewHeight))
             path.addLine(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: viewWidth, y: 0))
+            path.addLine(to: CGPoint(x: viewWidth, y: viewHeight))
+        case .TwoForUpAndRight:
+            path.move(to: CGPoint(x: 0, y: 0))
             path.addLine(to: CGPoint(x: viewWidth, y: 0))
             path.addLine(to: CGPoint(x: viewWidth, y: viewHeight))
         case .TwoForLeftAndRight:

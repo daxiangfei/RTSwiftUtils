@@ -26,6 +26,13 @@ extension UITableView {
         }
         updateClosure(self)
     }
+    
+    ///清除多余的分隔线
+    public func clearOtioseSeparatorLine() {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        self.tableFooterView = footerView
+    }
 }
 
 //phoneCollectionView.register(FlowFooterReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footer")
