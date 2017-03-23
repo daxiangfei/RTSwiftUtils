@@ -124,6 +124,10 @@ extension CGFloat {
     public var ratioHeight:CGFloat {
         return UIScreen.main.bounds.height * self/568
     }
+    
+    public var intValue:Int {
+        return Int(self)
+    }
 }
 
 

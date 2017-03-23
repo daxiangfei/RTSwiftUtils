@@ -240,10 +240,17 @@ extension ProtocolMaskShowView where Self:UIView {
 }
 
 
+public enum FromDirection {
+    case None
+    case Right
+    case Bottom
+}
+
 //遮层展示View 协议
 public protocol ProtocolFromBottomMaskShowView:class {
     var maskAnimationView:UIView! { get set }
     var maskAnimationViewTap:Selector! {get set}
+    var fromDirection:FromDirection {get}
     func showView()
     func dismissView(_ completeAction:(()->())?)
 }
@@ -267,23 +274,45 @@ extension ProtocolFromBottomMaskShowView where Self:UIView {
             maskAnimationView.isUserInteractionEnabled = true
             maskAnimationView.addGestureRecognizer(tap)
             
-            self.frame = CGRect(origin: CGPoint(x:0,y:keyWindow.bounds.height), size: CGSize(width:self.frame.width,height:self.frame.height))
+            switch fromDirection {
+            case .Right:
+                self.frame = CGRect(origin: CGPoint(x:keyWindow.bounds.width,y:self.frame.origin.y), size: CGSize(width:self.frame.width,height:self.frame.height))
+            case .Bottom:
+                self.frame = CGRect(origin: CGPoint(x:self.frame.origin.x,y:keyWindow.bounds.height), size: CGSize(width:self.frame.width,height:self.frame.height))
+            default:
+                break
+            }
             fatherView.addSubview(self)
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.maskAnimationView.alpha = 0.5
-                self.frame = CGRect(origin: CGPoint(x:0,y:keyWindow.bounds.height-self.frame.height), size: CGSize(width:self.frame.width,height:self.frame.height))
-                }, completion: nil)
+                switch self.fromDirection {
+                case .Right:
+                    self.frame = CGRect(origin: CGPoint(x:keyWindow.bounds.width - self.frame.width,y:self.frame.origin.y), size: CGSize(width:self.frame.width,height:self.frame.height))
+                case .Bottom:
+                    self.frame = CGRect(origin: CGPoint(x:self.frame.origin.x,y:keyWindow.bounds.height-self.frame.height), size: CGSize(width:self.frame.width,height:self.frame.height))
+                default:
+                    break
+                }
+                
+            }, completion: nil)
         }
     }
     
     public func dismissView(_ completeAction:(()->())?) {
         UIView.animate(withDuration: 0.3, animations: {
             self.maskAnimationView.alpha = 0
-            self.frame = CGRect(origin: CGPoint(x:0,y:self.maskAnimationView.bounds.height), size: CGSize(width:self.frame.width,height:self.frame.height))
-            }, completion: { (complete) in
-                self.superview?.removeFromSuperview()
-                if completeAction != nil {completeAction!()}
+            switch self.fromDirection {
+            case .Right:
+                self.frame = CGRect(origin: CGPoint(x:self.maskAnimationView.bounds.width,y:self.frame.origin.y), size: CGSize(width:self.frame.width,height:self.frame.height))
+            case .Bottom:
+                self.frame = CGRect(origin: CGPoint(x:self.frame.origin.x,y:self.maskAnimationView.bounds.height), size: CGSize(width:self.frame.width,height:self.frame.height))
+            default:
+                break
+            }
+        }, completion: { (complete) in
+            self.superview?.removeFromSuperview()
+            if completeAction != nil {completeAction!()}
         })
     }
     

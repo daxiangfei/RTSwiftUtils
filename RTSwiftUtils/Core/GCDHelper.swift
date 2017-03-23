@@ -10,8 +10,7 @@ import Foundation
 
 public class GCDHelper {
     
-    //在global队列里进行倒计时
-    //totleSeconds=总秒数  finishClosure:结束回调
+    ///在global队列里进行倒计时 totleSeconds=总秒数  finishClosure:结束回调
     public class func entryCountdown(_ totleSeconds:TimeInterval,finishClosure:@escaping (()->())) {
         var timeout = totleSeconds
         let queue = DispatchQueue.global()
@@ -29,7 +28,7 @@ public class GCDHelper {
         timer.resume()
     }
     
-    //totleSeconds=总秒数  finishClosure:结束回调 surplusSecond:剩余秒数
+    ///在global队列里进行倒计时 totleSeconds=总秒数 finishClosure:结束回调 surplusSecond:剩余秒数回调
     public class func entryCountdown(_ totleSeconds:TimeInterval,finishClosure:@escaping (()->()),surplusSecond:@escaping (_ currentSecond:Int)->()) {
         
         var timeout = totleSeconds
@@ -53,6 +52,11 @@ public class GCDHelper {
         timer.resume()
     }
     
+    
+}
+
+//瞄神的
+extension GCDHelper {
     
     public typealias Task = (_ cancel:Bool) -> Void
     
@@ -87,7 +91,6 @@ public class GCDHelper {
     public class func mainQueueCancel(_ task:Task?) {
         task?(true)
     }
-
     
 }
 

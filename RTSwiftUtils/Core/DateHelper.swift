@@ -17,13 +17,12 @@ public class DateHepler {
         let dateStr = dateFormatter.string(from: Date())
         return dateStr
     }
-    //获取当前时间戳
-    public class func achieveCurrentTimestamp() -> String{
-        let now = NSDate()
-        let timeInterval:TimeInterval = now.timeIntervalSince1970
+    
+    //获取给定时间的时间戳
+    public class func achieveTimestamp(time:Date) -> String{
+        let timeInterval:TimeInterval = time.timeIntervalSince1970
         let timeStamp = Int(timeInterval)
         return "\(timeStamp)"
-        
     }
     
     //按照给定时间转换成星期几
@@ -54,12 +53,26 @@ public class DateHepler {
     
     ///根据分开的年、月、日和给定的格式 转换成字符串日期
     public class func transforWith(year:Int,month:Int,day:Int,dateFormatterS:String) -> String {
-        let calendar = Calendar.autoupdatingCurrent
-        let dd = DateComponents(calendar: calendar, timeZone: nil, era: nil, year: year, month: month, day: day, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        let date = getDateWith(year: year, month: month, day: day)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormatterS
-        guard let realDate = dd.date else {return ""}
+        guard let realDate = date else {return ""}
         return dateFormatter.string(from:realDate)
+    }
+    
+    ///根据分开的年、月、日和给定的格式 转换日期
+    public class func getDateWith(year:Int,month:Int,day:Int) -> Date? {
+        let calendar = Calendar.autoupdatingCurrent
+        let dd = DateComponents(calendar: calendar, timeZone: nil, era: nil, year: year, month: month, day: day, hour: nil, minute: nil, second: nil, nanosecond: nil, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        return dd.date
+    }
+    
+    ///得到给定时间 当月第几日
+    public class func getDay(date:Date) -> Int {
+        let calendar = Calendar.autoupdatingCurrent
+        let dayComponent = Calendar.Component.day
+        let dayNum = calendar.component(dayComponent, from: date)
+        return dayNum
     }
     
     ///得到给定时间 是几月
@@ -85,7 +98,7 @@ public class DateHepler {
         let yearComponent = Calendar.Component.year
         let yearComponentNum = calendar.component(yearComponent, from: toYear)
         var numArray = [Int]()
-        for dd in 1970 ..< yearComponentNum {
+        for dd in 1970 ... yearComponentNum {
             numArray.append(dd)
         }
         return numArray
