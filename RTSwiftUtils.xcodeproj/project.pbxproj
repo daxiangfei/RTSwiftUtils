@@ -31,6 +31,7 @@
 		AD4424EA1E790E0200907613 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424D31E790E0200907613 /* UIViewControllerExtension.swift */; };
 		AD4424EB1E790E0200907613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424D41E790E0200907613 /* UIViewExtension.swift */; };
 		AD5CF8A31E790B8A00A42E3C /* RTSwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADB7E9901E9779F6007ABB5C /* AccessSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		AD5CF89E1E790B8A00A42E3C /* RTSwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RTSwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTSwiftUtils.h; sourceTree = "<group>"; };
 		AD5CF8A21E790B8A00A42E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AD4424BC1E790E0100907613 /* GCDHelper.swift */,
 				AD4424BD1E790E0100907613 /* PathHelper.swift */,
 				AD4424BE1E790E0100907613 /* RegularManage.swift */,
+				ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				AD4424DB1E790E0200907613 /* BorderLineViews.swift in Sources */,
 				AD4424D51E790E0200907613 /* DateHelper.swift in Sources */,
 				AD4424E81E790E0200907613 /* UITableViewExtension.swift in Sources */,
+				ADB7E9901E9779F6007ABB5C /* AccessSystem.swift in Sources */,
 				AD4424E41E790E0200907613 /* UIButtonExtension.swift in Sources */,
 				AD4424DE1E790E0200907613 /* RoundCornerLineViews.swift in Sources */,
 				AD4424DD1E790E0200907613 /* DottedLineView.swift in Sources */,
@@ -302,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -349,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

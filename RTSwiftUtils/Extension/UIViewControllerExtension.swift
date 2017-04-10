@@ -36,6 +36,12 @@ extension UIViewController {
         self.navigationController?.dismiss(animated: isAnimation, completion: nil)
     }
     
+    ///向上pop  减去几个
+    public func popToSubtraction(_ num:Int) {
+        guard self.navigationController != nil else{return}
+        let ind = self.navigationController!.popSubtractionIndex(num)
+        popToVCAtIndex(ind)
+    }
        
 }
 
@@ -136,21 +142,6 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         return self.childViewControllers.count != 1
     }
     
-}
-
-
-extension UIViewController {
-    ///设置图片性质的导航栏左边 按钮及响应方法 自动dismissSelf
-    public func decorateLeftNavImage(_ imageName:String) {
-        let image = UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal)
-        let leftItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(dismissSelf))
-        let negativeSpacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-        negativeSpacer.width = 5
-        self.navigationItem.setLeftBarButtonItems([negativeSpacer,leftItem], animated: true)
-    }
-    public func dismissSelf() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
 }
 
 
