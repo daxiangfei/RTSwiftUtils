@@ -10,6 +10,7 @@ import Foundation
 
 
 extension Double {
+  
     ///保留小数点后两位 不进位
     public var toDecimal:Double {
         let handler = NSDecimalNumberHandler(roundingMode: .down, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: true)
