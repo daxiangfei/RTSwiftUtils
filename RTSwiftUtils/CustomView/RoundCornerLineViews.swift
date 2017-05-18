@@ -13,7 +13,7 @@ public class RoundCornerLineView: UIView {
     fileprivate var lineWidth:CGFloat //线宽
     fileprivate var radii:CGFloat //半径
     
-    convenience init(borderColor:UIColor,lineWidth:CGFloat,radian:CGFloat,frame:CGRect=CGRect.zero) {
+    public convenience init(borderColor:UIColor,lineWidth:CGFloat,radian:CGFloat,frame:CGRect=CGRect.zero) {
         self.init(frame:frame)
         self.borderColor = borderColor
         self.lineWidth = lineWidth

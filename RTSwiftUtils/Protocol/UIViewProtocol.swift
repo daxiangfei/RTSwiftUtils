@@ -246,7 +246,7 @@ public enum FromDirection {
     case Bottom
 }
 
-//遮层展示View 协议
+//遮层展示View 协议 从某一个方向冒出来
 public protocol ProtocolFromBottomMaskShowView:class {
     var maskAnimationView:UIView! { get set }
     var maskAnimationViewTap:Selector! {get set}
@@ -317,6 +317,28 @@ extension ProtocolFromBottomMaskShowView where Self:UIView {
     }
     
 }
+
+//MARK: - 绘制渐变view
+public protocol DrawGradientView {
+  func drawGradientUse(top:UIColor,bottom:UIColor,rect:CGRect)
+}
+
+extension DrawGradientView where Self:UIView {
+  
+  public func drawGradientUse(top:UIColor,bottom:UIColor,rect:CGRect) {
+    //将颜色和颜色的位置定义在数组内
+    let gradientColors: [CGColor] = [top.cgColor, bottom.cgColor]
+    let gradientLocations: [CGFloat] = [0.0, 1.0]
+    //创建CAGradientLayer实例并设置参数
+    let gradientLayer: CAGradientLayer = CAGradientLayer()
+    gradientLayer.colors = gradientColors
+    gradientLayer.locations = gradientLocations as [NSNumber]?
+    gradientLayer.frame = rect
+    self.layer.insertSublayer(gradientLayer, at: 0)
+  }
+}
+
+
 
 
 
