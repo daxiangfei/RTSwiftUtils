@@ -32,6 +32,7 @@
 		AD4424EB1E790E0200907613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424D41E790E0200907613 /* UIViewExtension.swift */; };
 		AD5CF8A31E790B8A00A42E3C /* RTSwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADB7E9901E9779F6007ABB5C /* AccessSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */; };
+		ADF878121EF10E1A0018A5C4 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTSwiftUtils.h; sourceTree = "<group>"; };
 		AD5CF8A21E790B8A00A42E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessSystem.swift; sourceTree = "<group>"; };
+		ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				AD4424D21E790E0200907613 /* UITextFieldExtension.swift */,
 				AD4424D31E790E0200907613 /* UIViewControllerExtension.swift */,
 				AD4424D41E790E0200907613 /* UIViewExtension.swift */,
+				ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				ADB7E9901E9779F6007ABB5C /* AccessSystem.swift in Sources */,
 				AD4424E41E790E0200907613 /* UIButtonExtension.swift in Sources */,
 				AD4424DE1E790E0200907613 /* RoundCornerLineViews.swift in Sources */,
+				ADF878121EF10E1A0018A5C4 /* FileManagerExtension.swift in Sources */,
 				AD4424DD1E790E0200907613 /* DottedLineView.swift in Sources */,
 				AD4424DF1E790E0200907613 /* RoundCornerViews.swift in Sources */,
 				AD4424E91E790E0200907613 /* UITextFieldExtension.swift in Sources */,
