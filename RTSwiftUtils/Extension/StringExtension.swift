@@ -61,6 +61,17 @@ extension String {
     return strSize
   }
   
+  /// 把String的Range转为NSRange
+  /// 调用者为目标字符串本身
+  /// - Parameter range: 目标字符在整体字符中的Range
+  /// - Returns: 目标字符在整体字符中的NSRange
+  public func nsRange(from range: Range<String.Index>) -> NSRange {
+    let from = range.lowerBound.samePosition(in: utf16)
+    let to = range.upperBound.samePosition(in: utf16)
+    return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
+                   length: utf16.distance(from: from, to: to))
+  }
+  
 }
 
 

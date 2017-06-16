@@ -41,9 +41,11 @@ extension UIButton {
     decorateStyleOfBT(title: title, textColor: textColor, textFont: textFont, backGroundColor: backGroundColor)
   }
   
+  
   public func decorateStyleOfBT(imageName:String) {
     self.setImage(UIImage(named: imageName), for: .normal)
   }
+  
   
   public func decorateStyleOfBT(title:String,textColor:UIColor,textFont:CGFloat,imageName:String) {
     self.setImage(UIImage(named: imageName), for: .normal)
