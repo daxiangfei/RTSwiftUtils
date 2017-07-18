@@ -32,6 +32,7 @@
 		AD4424EB1E790E0200907613 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424D41E790E0200907613 /* UIViewExtension.swift */; };
 		AD5CF8A31E790B8A00A42E3C /* RTSwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADB7E9901E9779F6007ABB5C /* AccessSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */; };
+		ADCE32891F1CAEC500A5ED78 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCE32881F1CAEC500A5ED78 /* Constants.swift */; };
 		ADF878121EF10E1A0018A5C4 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		AD5CF8A11E790B8A00A42E3C /* RTSwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTSwiftUtils.h; sourceTree = "<group>"; };
 		AD5CF8A21E790B8A00A42E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessSystem.swift; sourceTree = "<group>"; };
+		ADCE32881F1CAEC500A5ED78 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				AD4424BD1E790E0100907613 /* PathHelper.swift */,
 				AD4424BE1E790E0100907613 /* RegularManage.swift */,
 				ADB7E98F1E9779F6007ABB5C /* AccessSystem.swift */,
+				ADCE32881F1CAEC500A5ED78 /* Constants.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				AD4424E31E790E0200907613 /* StringExtension.swift in Sources */,
 				AD4424D61E790E0200907613 /* GCDHelper.swift in Sources */,
 				AD4424E21E790E0200907613 /* NSAttributedStringExtension.swift in Sources */,
+				ADCE32891F1CAEC500A5ED78 /* Constants.swift in Sources */,
 				AD4424DC1E790E0200907613 /* CountDownBT.swift in Sources */,
 				AD4424E01E790E0200907613 /* BaseDataExtension.swift in Sources */,
 				AD4424DB1E790E0200907613 /* BorderLineViews.swift in Sources */,
