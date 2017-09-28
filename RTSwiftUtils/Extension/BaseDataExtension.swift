@@ -14,10 +14,9 @@ extension Double {
   ///保留小数点后两位 不进位
   public var toDecimal:Double {
     let handler = NSDecimalNumberHandler(roundingMode: .down, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: true)
-    let hundredDe = NSDecimalNumber(value: 1)
-    let numOne = NSDecimalNumber(value: self)
-    let result = numOne.multiplying(by: hundredDe, withBehavior: handler)
-    return result.doubleValue
+    let dec = NSDecimalNumber(value: self)
+    let dd = dec.rounding(accordingToBehavior: handler)
+    return dd.doubleValue
   }
   
   ///取整
@@ -28,12 +27,20 @@ extension Double {
   
   ///保留后两位小数点 小数点后两位不进位
   public var toDecimalString:String {
-    return String(format: "%.2f", self.toDecimal)
+    let handler = NSDecimalNumberHandler(roundingMode: .down, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: true)
+    let dec = NSDecimalNumber(value: self)
+    let dd = dec.rounding(accordingToBehavior: handler)
+    return "\(dd.doubleValue)";
   }
   
   public var intValue:Int {
     let intValue = floor(self) //舍弃小数位
     return Int(intValue)
+  }
+  
+  //字符串值
+  var stringValue:String {
+    return String(self)
   }
   
   ///减去
@@ -61,6 +68,7 @@ extension Double {
     let result = numOne.multiplying(by: hundredDe, withBehavior: handler)
     return result.floatValue
   }
+  
   ///判断小数点后的值是否为零，为零则返回true，不为零就返回false
   public var judgeDoubleIsorInt : Bool {
     let num = Int(self)
