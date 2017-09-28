@@ -14,7 +14,7 @@ extension UITextField {
     /// title  textColor textFont
     public func decorateStyleOfTF(placeholderTitle:String,placeholderColor:UIColor,keyboardType:UIKeyboardType,borderStyle:UITextBorderStyle,secureTextEntry:Bool,textColor:UIColor,textFont:CGFloat) {
         self.placeholder = placeholderTitle
-        let attDic = [NSForegroundColorAttributeName:placeholderColor,NSFontAttributeName:UIFont.systemFont(ofSize: textFont)]
+        let attDic = [NSAttributedStringKey.foregroundColor:placeholderColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: textFont)]
         let att = NSAttributedString(string: placeholderTitle, attributes: attDic)
         self.attributedPlaceholder = att
         self.keyboardType =  keyboardType
@@ -30,7 +30,7 @@ extension UITextField {
     /// title  textColor textFont  leftSpaceWidth
     public func decorateStyleOfTF(placeholderTitle:String,placeholderColor:UIColor,keyboardType:UIKeyboardType,borderStyle:UITextBorderStyle,secureTextEntry:Bool,textColor:UIColor,textFont:CGFloat,leftSpaceWidth:Int) {
         self.placeholder = placeholderTitle
-        let attDic = [NSForegroundColorAttributeName:placeholderColor,NSFontAttributeName:UIFont.systemFont(ofSize: textFont)]
+        let attDic = [NSAttributedStringKey.foregroundColor:placeholderColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: textFont)]
         let att = NSAttributedString(string: placeholderTitle, attributes: attDic)
         self.attributedPlaceholder = att
         self.keyboardType =  keyboardType

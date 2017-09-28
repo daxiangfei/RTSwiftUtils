@@ -15,11 +15,11 @@ extension NSAttributedString {
     public class func attributedOfTwoPart(onePartTitle:String,onePartForegroundColor:UIColor,onePartFontSize:CGFloat,twoPartTitle:String,twoPartForegroundColor:UIColor,twoPartFontSize:CGFloat) -> NSAttributedString {
         
         let resultAtt = NSMutableAttributedString()
-        let oneAttDic = [NSForegroundColorAttributeName:onePartForegroundColor,NSFontAttributeName:UIFont.systemFont(ofSize: onePartFontSize)]
+        let oneAttDic = [NSAttributedStringKey.foregroundColor:onePartForegroundColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: onePartFontSize)]
         let oneAtt = NSAttributedString(string: onePartTitle, attributes: oneAttDic)
         resultAtt.append(oneAtt)
         
-        let twoAttDic = [NSForegroundColorAttributeName:twoPartForegroundColor,NSFontAttributeName:UIFont.systemFont(ofSize: twoPartFontSize)]
+        let twoAttDic = [NSAttributedStringKey.foregroundColor:twoPartForegroundColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: twoPartFontSize)]
         let twoAtt = NSAttributedString(string: twoPartTitle, attributes: twoAttDic)
         
         resultAtt.append(twoAtt)
@@ -31,11 +31,11 @@ extension NSAttributedString {
     public class func attributedOfTwoPartWithSameColor(foregroundColor:UIColor,onePartTitle:String,onePartFontSize:CGFloat,twoPartTitle:String,twoPartFontSize:CGFloat) -> NSAttributedString {
         
         let resultAtt = NSMutableAttributedString()
-        let oneAttDic = [NSForegroundColorAttributeName:foregroundColor,NSFontAttributeName:UIFont.systemFont(ofSize: onePartFontSize)]
+        let oneAttDic = [NSAttributedStringKey.foregroundColor:foregroundColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: onePartFontSize)]
         let oneAtt = NSAttributedString(string: onePartTitle, attributes: oneAttDic)
         resultAtt.append(oneAtt)
         
-        let twoAttDic = [NSForegroundColorAttributeName:foregroundColor,NSFontAttributeName:UIFont.systemFont(ofSize: twoPartFontSize)]
+        let twoAttDic = [NSAttributedStringKey.foregroundColor:foregroundColor,NSAttributedStringKey.font:UIFont.systemFont(ofSize: twoPartFontSize)]
         let twoAtt = NSAttributedString(string: twoPartTitle, attributes: twoAttDic)
         
         resultAtt.append(twoAtt)
@@ -46,8 +46,8 @@ extension NSAttributedString {
     public class func attributedOfUnderLine(title:String,titleColor:UIColor) -> NSAttributedString {
         
         let resultAtt = NSMutableAttributedString()
-        let oneAttDic = [NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue,NSUnderlineColorAttributeName:titleColor,NSForegroundColorAttributeName:titleColor] as [String : Any]
-        let oneAtt = NSAttributedString(string: title, attributes: oneAttDic)
+      let oneAttDic = [NSAttributedStringKey.underlineStyle.rawValue:NSUnderlineStyle.styleSingle.rawValue,NSAttributedStringKey.underlineColor:titleColor,NSAttributedStringKey.foregroundColor:titleColor] as [AnyHashable : Any]
+      let oneAtt = NSAttributedString(string: title, attributes: oneAttDic as? [NSAttributedStringKey : Any])
         resultAtt.append(oneAtt)
         return resultAtt
     }
@@ -57,11 +57,11 @@ extension NSAttributedString {
     public class func attributedForUnderLineAndNormal(oneTitle:String,oneTitleColor:UIColor,twoTitle:String,twoTitleColor:UIColor) -> NSAttributedString {
         
         let resultAtt = NSMutableAttributedString()
-        let oneAttDic = [NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue,NSUnderlineColorAttributeName:oneTitleColor,NSForegroundColorAttributeName:oneTitleColor] as [String : Any]
-        let oneAtt = NSAttributedString(string: oneTitle, attributes: oneAttDic)
+      let oneAttDic = [NSAttributedStringKey.underlineStyle.rawValue:NSUnderlineStyle.styleSingle.rawValue,NSAttributedStringKey.underlineColor:oneTitleColor,NSAttributedStringKey.foregroundColor:oneTitleColor] as [AnyHashable : Any]
+      let oneAtt = NSAttributedString(string: oneTitle, attributes: oneAttDic as? [NSAttributedStringKey : Any])
         resultAtt.append(oneAtt)
         
-        let twoAttDic = [NSForegroundColorAttributeName:twoTitleColor]
+        let twoAttDic = [NSAttributedStringKey.foregroundColor:twoTitleColor]
         let twoAtt = NSAttributedString(string: twoTitle, attributes: twoAttDic)
         resultAtt.append(twoAtt)
         

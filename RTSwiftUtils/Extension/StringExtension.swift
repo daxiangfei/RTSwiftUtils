@@ -34,7 +34,7 @@ extension String {
 extension String {
   
   public func achieveStringRect(_ maxWidth:CGFloat,font:CGFloat) -> CGRect {
-    let attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: font)]
+    let attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: font)]
     let maxSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
     let rect = self.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
     return rect
@@ -55,21 +55,10 @@ extension String {
   
   ///获取Size
   public func getSize(font: CGFloat) -> CGSize {
-    let attri = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: font)]
+    let attri = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: font)]
     let str = self as NSString
-    let strSize = str.size(attributes: attri)
+    let strSize = str.size(withAttributes: attri)
     return strSize
-  }
-  
-  /// 把String的Range转为NSRange
-  /// 调用者为目标字符串本身
-  /// - Parameter range: 目标字符在整体字符中的Range
-  /// - Returns: 目标字符在整体字符中的NSRange
-  public func nsRange(from range: Range<String.Index>) -> NSRange {
-    let from = range.lowerBound.samePosition(in: utf16)
-    let to = range.upperBound.samePosition(in: utf16)
-    return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
-                   length: utf16.distance(from: from, to: to))
   }
   
 }

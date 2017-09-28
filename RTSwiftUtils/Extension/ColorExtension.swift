@@ -43,9 +43,9 @@ public extension UIColor {
       let r = cString[cString.startIndex ..< oneindex]
       let g = cString[oneindex ..< fourindex]
       let b = cString[fourindex ..< sixindex]
-      Scanner(string: r).scanHexInt64(&rValue)
-      Scanner(string: g).scanHexInt64(&gValue)
-      Scanner(string: b).scanHexInt64(&bValue)
+      Scanner(string: String(r)).scanHexInt64(&rValue)
+      Scanner(string: String(g)).scanHexInt64(&gValue)
+      Scanner(string: String(b)).scanHexInt64(&bValue)
     }
     self.init(red: CGFloat(rValue)/255,
               green: CGFloat(gValue)/255,
