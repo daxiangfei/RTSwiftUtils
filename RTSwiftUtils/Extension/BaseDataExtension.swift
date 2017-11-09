@@ -39,7 +39,7 @@ extension Double {
   }
   
   //字符串值
-  var stringValue:String {
+  public var stringValue:String {
     return String(self)
   }
   

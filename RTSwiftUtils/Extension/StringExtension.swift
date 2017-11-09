@@ -67,8 +67,8 @@ extension String {
 public extension String {
   
   ///是否是纯中文
-  public func isPureChinese() -> Bool {
-    for (_,value) in self.characters.enumerated() {
+  public var isPureChinese:Bool {
+    for (_,value) in self.enumerated() {
       if !("\u{4E00}" <= value && value <= "\u{9FA5}") {
         return false
       }

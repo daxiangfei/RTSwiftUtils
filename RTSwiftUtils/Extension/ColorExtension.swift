@@ -35,7 +35,7 @@ public extension UIColor {
     var rValue:UInt64 = 0
     var gValue:UInt64 = 0
     var bValue:UInt64 = 0
-    if hexStr.characters.count == 6 {
+    if hexStr.count == 6 {
       let cString = hexStr.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
       let oneindex = cString.index(cString.startIndex, offsetBy: 2)
       let fourindex = cString.index(oneindex, offsetBy: 2)

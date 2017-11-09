@@ -16,12 +16,12 @@ import Foundation
 ///   - file: 省略
 ///   - method: 省略
 ///   - line: 省略
-func printLog<T>(message: T,file: String = #file,
+public func printLog<T>(message: T,file: String = #file,
               method: String = #function,
               line: Int = #line ) {
   print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
 }
 
 
-let ScreenWidth = UIScreen.main.bounds.width //屏幕的宽度
-let ScreenHeight = UIScreen.main.bounds.height //屏幕的高度
+public let ScreenWidth = UIScreen.main.bounds.width //屏幕的宽度
+public let ScreenHeight = UIScreen.main.bounds.height //屏幕的高度

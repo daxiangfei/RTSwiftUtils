@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1F384D1FB445A8000598AC /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F384C1FB445A8000598AC /* UITextViewExtension.swift */; };
 		AD4424D51E790E0200907613 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424BB1E790E0100907613 /* DateHelper.swift */; };
 		AD4424D61E790E0200907613 /* GCDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424BC1E790E0100907613 /* GCDHelper.swift */; };
 		AD4424D71E790E0200907613 /* PathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4424BD1E790E0100907613 /* PathHelper.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD1F384C1FB445A8000598AC /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		AD4424BB1E790E0100907613 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		AD4424BC1E790E0100907613 /* GCDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDHelper.swift; sourceTree = "<group>"; };
 		AD4424BD1E790E0100907613 /* PathHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathHelper.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				AD4424D31E790E0200907613 /* UIViewControllerExtension.swift */,
 				AD4424D41E790E0200907613 /* UIViewExtension.swift */,
 				ADF878111EF10E1A0018A5C4 /* FileManagerExtension.swift */,
+				AD1F384C1FB445A8000598AC /* UITextViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				AD4424DA1E790E0200907613 /* UIViewProtocol.swift in Sources */,
 				AD4424EB1E790E0200907613 /* UIViewExtension.swift in Sources */,
 				AD4424D91E790E0200907613 /* UIViewControllerProtocol.swift in Sources */,
+				AD1F384D1FB445A8000598AC /* UITextViewExtension.swift in Sources */,
 				AD4424EA1E790E0200907613 /* UIViewControllerExtension.swift in Sources */,
 				AD4424E11E790E0200907613 /* ColorExtension.swift in Sources */,
 			);
