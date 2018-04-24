@@ -40,7 +40,20 @@ extension Double {
   
   //字符串值
   public var stringValue:String {
-    return String(self)
+   
+    //正常使用 String(self)  会出现
+    //1、如1.40  返回的是1.4
+    //2、如1.00 或者 1 返回的是1.0
+    //3、其它的正常显现 4.59 返回4.59
+    let strValue = String(self)
+    let subStrArr = strValue.components(separatedBy: ".")
+    guard subStrArr.count == 2 else { return strValue}
+    let lastStr = subStrArr[1]
+    if lastStr.count >= 2 {
+      return strValue
+    }else {
+      return subStrArr[0] + "." + lastStr + "0"
+    }
   }
   
   ///减去

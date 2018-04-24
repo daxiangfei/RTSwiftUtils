@@ -60,16 +60,10 @@ extension UIViewController {
   public func decorateRightNavImage(_ imageName:String,clickSelector:Selector) -> UIButton {
     
     let imageC = UIImage(named: imageName)
-    var width:CGFloat = 18
-    var height:CGFloat = 18
-    if let image = imageC {
-      width = image.width
-      height = image.height
-    }
     let rightbt = UIButton(type: .custom)
-    rightbt.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height))
+    rightbt.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30))
     rightbt.addTarget(self, action: clickSelector, for: .touchUpInside)
-    rightbt.setImage(imageC, for: UIControlState())
+    rightbt.setImage(imageC, for: .normal)
     let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
     negativeSpacer.width = -5
     let rightItem = UIBarButtonItem(customView: rightbt)
@@ -138,8 +132,25 @@ extension UINavigationController: UIGestureRecognizerDelegate {
     return popIndex
   }
   
+  
   public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     return self.childViewControllers.count != 1
+  }
+  
+}
+
+extension UIViewController {
+  
+  
+  /// 保留导航栏栈中的第一个和最后一个vc
+  public func navStackSaveFirstAndLast() {
+    guard let nav = self.navigationController else { return }
+    var vcs = nav.viewControllers
+    let firstVC = vcs.first
+    let lastVC = vcs.last
+    vcs.removeAll()
+    vcs.append(contentsOf: [firstVC!,lastVC!])
+    nav.setViewControllers(vcs, animated: false)
   }
   
 }
